@@ -1,0 +1,57 @@
+для создание проекта пишем команду 
+"django-admin startproject <название проекта> ."
+
+для  создание приложение пишем команду
+"python manage.py startapp "book" <название программы>"
+
+закидываем приложение в installed_apps
+
+миграци:
+    python3 manage.py makemigrations(commit)
+    python3 manage.py migrate(push)
+
+запуск проекта:
+    python3 manage.py runserver
+
+для создание супер юзера:
+    python3 manage.py createsuperuser
+
+
+update:
+функция update если хотите обновить несколько объектов
+<название модели>.objects.get(field='value').update(field='new value')
+
+обращение к атрибуту если хотите обновить 1 объект
+item.field = 'new field'
+item.save()
+
+
+
+from <название приложения> import <название модели>
+
+QuerySet - набор данных(список с данными)
+
+
+list:
+<название модели>.objects.all() - получение всеч данных
+retrieve:
+<название модели>.objects.get(pk=1) - получение данных по определенным критериям
+
+
+
+create:
+<название модели>.objects.create(
+    field='value',
+    field2 = value
+)
+
+
+delete:
+obj = <название модели>.objects.get(field=value)
+obj.delete
+
+
+создать три объекта 
+1 - объект title на 'here is new'
+2 - yдалить 2 объект
+3 - обновить все з поля
