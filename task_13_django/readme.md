@@ -1,36 +1,47 @@
 <h1> Модели Django: типы полей и их опции. Работа с миграциями. Связи между таблицами. <h1>
 
+
+    <ul>
+        <li>Прежде чем как все начать создайте свое виртуальное окружение командой:</li>
+        <li>python3 -m venv venv</li>
+        
+        
+        
+        <li>Затем активируйте своё виртуальное окружение командой:</li>
+        <li>sourse venv/bin/activate</li>
+        
+        <li>Теперь зайдите в config.settings в DATABASES укажите свой USER и PASSWORD</li>
+        затем в psql создайте такойже базу данных как под ключом NAME
+        
+        <li>Создайте необходимые миграции для данных моделей с помощью команды</li>
+        <li>python manage.py makemigrations</li>
+        
+        <li>Примените миграции к базе данных с помощью команды </li>
+        <li>python manage.py migrate</li>
+        
+        <li>
+            Теперь вы можете проводдить разные операции с таблицами Student и Сourse
+            Зайдите в консоль питона с помощью команды
+        </li>
+        <li>python3 manage.py shell</li>
+        
+        <li>Можете тут использовать CRUD</li>
+        
+        <li>from student.models import Student, Course (сперва надо импортировать наши классы(базы данных))</li>
+    </ul>
+    <ul>
+        
+        <li>создаем объект от Student с помощь команды сreate синтаксис выглядит так:</li>
+        <li>    
+            student1 = Student.objects.create(first_name='student1_first_name', last_name='student1_last_name', email='user@example.com', age=18)
+            student2 = Student.objects.create(first_name='student2_first_name', last_name='student2_last_name', email='user2@example.com', age=19)
+            student3 = Student.objects.create(first_name='student3_first_name', last_name='student3_last_name', email='user3@example.com', age=20)
+        </li>
+    </ul>
 <ul>
-    <li>Прежде чем как все начать создайте свое виртуальное окружение командой:</li>
-    <li>python3 -m venv venv</li>
+    <li>Теперь создадим объект от Сourse  с помощь команды сreate синтаксис выглядит так:</li>
+    <li>course1 = Course.objects.create(name='course1_name', description='course1_description')</li>
 </ul>
-
-
-2) Затем активируйте своё виртуальное окружение командой:
-sourse venv/bin/activate
-
-3) Теперь зайдите в config.settings в DATABASES укажите свой USER и PASSWORD
-   затем в psql создайте такойже базу данных как под ключом NAME
-
-4) Создайте необходимые миграции для данных моделей с помощью команды
-python manage.py makemigrations
-
-7) Примените миграции к базе данных с помощью команды 
-python manage.py migrate
-
-8) Теперь вы можете проводдить разные операции с таблицами Student и Сourse
-   Зайдите в консоль питона с помощью команды 
-   python3 manage.py shell
-
-9) Можете тут использовать CRUD
->>> from student.models import Student, Course (сперва надо импортировать наши классы(базы данных))
-# создаем объект от Student с помощь команды сreate синтаксис выглядит так:
->>> student1 = Student.objects.create(first_name='student1_first_name', last_name='student1_last_name', email='user@example.com', age=18)
->>> student2 = Student.objects.create(first_name='student2_first_name', last_name='student2_last_name', email='user2@example.com', age=19)
->>> student3 = Student.objects.create(first_name='student3_first_name', last_name='student3_last_name', email='user3@example.com', age=20)
-
-# Теперь создадим объект от Сourse  с помощь команды сreate синтаксис выглядит так:
-course1 = Course.objects.create(name='course1_name', description='course1_description')
 
 # важно свызь мы передаем другим ключевым словом set синтаксис выглядит так:
 >>> course1.students.set([student1, student2])
