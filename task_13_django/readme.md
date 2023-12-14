@@ -23,33 +23,33 @@ python manage.py migrate
 
 9) Можете тут использовать CRUD
 >>> from student.models import Student, Course (сперва надо импортировать наши классы(базы данных))
-# создаем объект от Student с помощь команды сreate синтаксис выглядит так:
+10) создаем объект от Student с помощь команды сreate синтаксис выглядит так:
 >>> student1 = Student.objects.create(first_name='student1_first_name', last_name='student1_last_name', email='user@example.com', age=18)
 >>> student2 = Student.objects.create(first_name='student2_first_name', last_name='student2_last_name', email='user2@example.com', age=19)
 >>> student3 = Student.objects.create(first_name='student3_first_name', last_name='student3_last_name', email='user3@example.com', age=20)
 
-# Теперь создадим объект от Сourse  с помощь команды сreate синтаксис выглядит так:
+11) Теперь создадим объект от Сourse  с помощь команды сreate синтаксис выглядит так:
 course1 = Course.objects.create(name='course1_name', description='course1_description')
 
-# важно свызь мы передаем другим ключевым словом set синтаксис выглядит так:
+12) важно свызь мы передаем другим ключевым словом set синтаксис выглядит так:
 >>> course1.students.set([student1, student2])
 >>> student1.courses.all() # если хотите просмотреть то что содержится внутри student1
 
-# Надо прочитать то что мы внесли с помощью командами all() u get()
+13) Надо прочитать то что мы внесли с помощью командами all() u get()
 <название модели>.objects.all()   # чтобы прочитать все данные 
 
 <название модели>.objects.get(pk=1)  # получение данных по определенным критериям
 
-# время обновлять наши столбцы или строки
-# если хотите обновить 1 объект
+14) время обновлять наши столбцы или строки
+15) если хотите обновить 1 объект
 >>> student1 = Student.objects.get(pk=1) # получаем по id к примеру 1
 >>> student1.age = 59 # выбираем нужный атрибут
 >>> student1.save() # сохряняем наши изменение
 
-# функция update если хотите обновить несколько объектов
+16) функция update если хотите обновить несколько объектов
   <название модели>.objects.get(field='value').update(field='new value')
 
-# функция delete 
+17) функция delete 
 1) К примеру удаляем объект от Student
 >>> student1 = Student.objects.get(pk=1) # для начало нужно получить данные с помощью get запроса
 >>> student1.delete()  # теперь можно удалять
