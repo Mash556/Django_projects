@@ -58,7 +58,7 @@ course1 = Course.objects.get(pk=1)
 course1.delete()
 
 
-<h1> Проверим всё в сервере <h1>
+# Проверим всё в сервере
 
 1) Cоздайте супер юзера с командой 
     python manage.py createsuperuser
@@ -75,7 +75,7 @@ course1.delete()
 
 
 
-<h1> В postgresql вы можете увидеть вашу базу данных и таблицы <h1>
+ В postgresql вы можете увидеть вашу базу данных и таблицы 
 
 1) Перейдите в postgresql с помощью команды psql таблицы
 
