@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'task.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'author_and_book',
         'USER': 'hello',
         'PASSWORD': 1,

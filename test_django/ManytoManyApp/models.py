@@ -6,13 +6,18 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
 
+    teachers = models.ManyToManyField(
+        'Teacher',
+        related_name='students'
+    )
+
 class Teacher(models.Model):
     name = models.CharField(max_length=100)
     subject = models.CharField(max_length=40)
     expirience = models.IntegerField()
     students = models.ManyToManyField(
         Student,
-        related_name='teacher'
+        related_name='teachers'
         )
 
 

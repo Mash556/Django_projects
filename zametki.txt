@@ -19,7 +19,7 @@
 
 update:
 функция update если хотите обновить несколько объектов
-<название модели>.objects.get(field='value').update(field='new value')
+<название модели>.objects.filter(field='value').update(field='new value')
 
 обращение к атрибуту если хотите обновить 1 объект
 item.field = 'new field'
